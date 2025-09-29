@@ -1,0 +1,266 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-family:'Times New Roman', Times, serif;
+  justify-content: center;
+  background: #edf7f6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(90deg, #9df9ef, #edf7f6);
+  color:#edf7f6;
+}
+
+header h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease-out;
+}
+
+header p {
+  font-size: 1.5rem;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  
+}
+
+/* Skills Section */
+#skills {
+  padding: 80px 0;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+#skills li {
+  background-color: #e5e7eb;
+  color: #111827;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#skills li:hover {
+  background-color: #ffa8B6;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Projects Section */
+#projects {
+  padding: 80px 0;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.project-card a {
+  display: inline-block;
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.project-card a:hover {
+  color: #8b5cf6;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Contact Section */
+#contact {
+  background-color: #d9d9f0;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.contact-links a {
+  display: inline-block;
+  margin: 10px 15px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.contact-links a:hover {
+  color: #f0ffdd;
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  padding: 30px 0;
+  text-align: center;
+  background-color: #2f8d84;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (min-width: 768px) {
+  #about {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  #about div {
+    max-width: 600px;
+  }
+}
+
+/* Mobile <480px */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  #about img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .contact-links a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+/* About Section */
+#about {
+  display: flex;
+  flex-direction: column; /* stack on mobile */
+  justify-content: center;
+  align-items: center;    /* center horizontally */
+  text-align: center;
+  gap: 20px;              /* space between image and text */
+  padding: 50px 20px;
+}
+
+/* Profile image */
+#about img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3b82f6;
+}
+
+/* Name and bio */
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#about p {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 700px; /* optional: limit width for readability */
+}
+
+/* Tablet and desktop: keep stacked but centered */
+@media (min-width: 768px) {
+  #about {
+    flex-direction: column; /* still stacked, can change to row if needed */
+  }
+}
